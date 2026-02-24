@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+     int num1, num2, soma;
+    float media;
+    printf("Insira primeiro número: ");
+    scanf("\n%d", &num1);
+    
+    printf("Insira segundo número: ");
+    scanf("\n%d", &num2);
+    
+    
+    soma=num1+num2;
+    
+    printf("A soma de %d e %d é %d", num1, num2, soma);
+    
+    media=(float)soma/2;
+    
+    printf("\nA média da soma de %d e %d é %.2f", num1, num2, media);
+
+    return 0;
+}
