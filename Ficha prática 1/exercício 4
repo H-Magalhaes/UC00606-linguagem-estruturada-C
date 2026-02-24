@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    float f, c;
+    
+    printf("Insira graus Fahrenheit: ");
+    scanf("\n%f", &f);
+    
+    c=(f-32)/1.8;
+   
+    printf("\n%.2fº graus Fahrenheit, correspnde a %.2fº Celsius", f, c);
+    return 0;
+}
