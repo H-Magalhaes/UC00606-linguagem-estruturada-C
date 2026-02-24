@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Insira um número: ");
+    scanf("\n%d", &num);
+    
+    printf("O número é: %d", num);
+
+    return 0;
+}
