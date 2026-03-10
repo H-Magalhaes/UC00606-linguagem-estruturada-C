@@ -1,0 +1,38 @@
+/******************************************************************************
+Elabore um programa em C que calcule a classificação final de um aluno, 
+através da média de 3 testes, deverá mostrar: - Excelente se média dos 3 testes 
+for superior ou igual a 17 valores - 
+Bom se média dos 3 testes for superior a 14 valores - 
+Suficiente se média dos 3 testes for superior a 9.5 valores - 
+Insuficiente se média dos 3 testes for inferior a 9.5 valores 
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float teste1, teste2, teste3, media;
+    
+    
+    printf("Insira a nota do primeiro teste: ");
+    scanf("%f", &teste1);
+    
+    printf("Insira a nota do segundo teste: ");
+    scanf("%f", &teste2);
+    
+    printf("Insira a nota do terceiro teste: ");
+    scanf("%f", &teste3);
+    
+    media = (teste1 + teste2 + teste3) / 3;
+    
+    if(media>=17){
+        printf("Excelente, com a média de %.2f", media);
+    }else if(media>14){
+         printf("Bom, com a média de %.2f", media);
+    }else if(media>9.5){
+         printf("Suficiente, com a média de %.2f", media);
+    }else{
+         printf("Insuficiente, com a média de %.2f", media);
+    }
+
+    return 0;
+}
