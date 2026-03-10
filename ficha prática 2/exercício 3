@@ -1,0 +1,33 @@
+/******************************************************************************
+
+ Elabore um programa em C que calcule a classificação final de um aluno,
+ através da média de 3 testes, deverá mostrar: - 
+ Aprovado se média dos 3 testes for superior ou igual a 9,5 valores - 
+ Reprovado se média dos 3 testes for inferior a 9,5 valores 
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float nota1, nota2, nota3, media=0.0;
+    
+    printf("Insira a nota do primeiro teste: ");
+    scanf("%f", &nota1);
+    
+    printf("Insira a nota do segundo teste: ");
+    scanf("%f", &nota2);
+    
+    printf("Insira a nota do terceiro teste: ");
+    scanf("%f", &nota3);
+    
+    media = (nota1 + nota2 +nota3) / 3;
+    
+    if(media >=9.5){
+        printf("Aprovado, com a média de %.2f valores", media);
+    }else{
+        printf("Reprovado, com a média de %.2f valores", media);
+    }
+
+    return 0;
+}
