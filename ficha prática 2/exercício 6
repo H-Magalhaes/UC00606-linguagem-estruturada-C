@@ -1,0 +1,34 @@
+/******************************************************************************
+ Um aluno de Desenvolvimento de Software obtém aprovação se obtiver 10 ou mais valores 
+ em cada uma das disciplinas: Matemática, Programação e Sistemas de Informação; é aprovado
+ com distinção se obtiver 16 valores ou mais em pelo menos duas disciplinas e for aprovado
+ na terceira; reprova nos restantes casos. Elabore um programa em C que mostre 
+ a media das notas, bem como a classificação do aluno. 
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float mat, prog, sist, media;
+    
+    printf("Insira a nota de Matemática: ");
+    scanf("%f", &mat);
+    
+    printf("Insira a nota de Programação: ");
+    scanf("%f", &prog);
+    
+    printf("Insira a nota de Sistemas de informação: ");
+    scanf("%f", &sist);
+    
+    media = (mat + prog + sist) / 3;
+    
+    if(mat<10 || prog<10 || sist<10){
+        printf("Reprovado, com a média de %.2f valores", media);
+    }else if(mat>=16 && prog>=16 || mat>=16 && sist>=16 || prog>=16 && sist>=16){
+        printf("Aprovado com distinção, com a média de %.2f valores", media);
+    }else{
+        printf("Aprovado, com a média de %.2f valores", media);
+    }
+
+    return 0;
+}
