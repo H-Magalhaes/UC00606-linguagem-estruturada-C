@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Contador
+Notas com média
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float nota, media, soma;
+    int i, cont;
+    char ent;
+    
+    ent = 's';
+    while(ent=='s' || ent=='S'){
+        
+    soma=0.0;
+    
+    printf("Quantas notas de teste deseja inserir? ");
+    scanf("%d", &i);
+    
+    for(cont=1; cont<=i; cont++){
+        do{
+            printf("Insira %dª nota ", cont);
+            scanf("%f", &nota);
+            if(nota<0 || nota>20){
+                printf("Nota inválida, inserira uma nota compreendida entre 0 e 20\n");
+            }
+        }while(nota<0 || nota>20);
+        soma = soma + nota;
+    }
+    media = soma / i;
+    
+    if(media<10){
+        printf("Reprovdo, com a média de %.2f valores", media);
+    }else if(media>=16){
+        printf("Aprovdo com distinção, com a média de %.2f valores", media);
+    }else{
+        printf("Aprovdo, com a média de %.2f valores", media);
+    }
+    printf("\nDeseja continuar? (s ou n) ");
+    scanf("%s", &ent);
+    }
+    return 0;
+}
