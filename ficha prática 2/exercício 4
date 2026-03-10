@@ -1,0 +1,34 @@
+/******************************************************************************
+Elabore um programa em C que calcule a classificação final de um aluno
+sabendo as notas que obteve em três testes e a ponderação atribuída 
+a cada um deles. Teste Ponderação 1.º 20% 2.º 50% 3.º 30% 
+Se a classificação final for superior ou igual a dez, 
+o aluno está aprovado; caso contrário, está reprovado. 
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float teste1, teste2, teste3, media;
+    
+    printf("Insira a nota do primeiro teste: ");
+    scanf("%f", &teste1);
+    
+    printf("Insira a nota do primeiro teste: ");
+    scanf("%f", &teste1);
+    
+    printf("Insira a nota do primeiro teste: ");
+    scanf("%f", &teste1);
+    
+    media = teste1 * 0.2 + teste2 * 0.5 + teste3 * 0.3;
+    
+    if(media>=10){
+        printf("Aprovado com a média de %.2f", media);
+    }
+    else{
+        printf("Reprovado com a média de %.2f", media);
+    }
+
+    return 0;
+}
