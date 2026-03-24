@@ -1,0 +1,35 @@
+/******************************************************************************
+4. Elabore um programa em C, que peça várias idades ao utilizador e calcule
+a média das idades (a quantidade de idades será definida pelo utilizador). 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        
+        int q_i, i, idade=0;
+        float media=0, soma=0;
+        
+    printf("Quantas idades deseja inserir? ");
+    scanf("%d", &q_i);
+    
+     i=1;
+    
+    while(i<=q_i){
+       
+        
+        
+    printf("Insira %dª idade: ", i);
+    scanf("%d", &idade);
+    
+    soma+=idade;
+    
+    i++;
+    }
+    printf("A soma das idedes é %.2f\n", soma);
+    media=soma/q_i;
+    printf("A média da soma das idedes é %.2f", media);
+    return 0;
+}
+}
