@@ -1,0 +1,42 @@
+/******************************************************************************
+5. Elabore um programa em C, que peça 10 números e imprima:  
+a) Quantos são pares e quantos são ímpares. 
+b) A soma dos números pares e a soma dos números ímpares. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        
+        int i, num, cont_p=0, cont_i=0, soma_p=0, soma_i=0;
+         
+      
+        
+        i=1;
+        
+        while(i<=10){
+            printf("insira %dº número: ", i);
+            scanf("%d", &num);
+            
+             i++;
+             
+             if(num%2==0){
+                 cont_p++;
+                 soma_p+=num;
+             }
+             else{
+                 cont_i++;
+                 soma_i+=num;
+             }
+        }
+        printf("A soma dos pares é %d\n", soma_p);
+        printf("A soma dos impares é %d\n", soma_i);
+        
+        printf("%d são pares\n", cont_p);
+        printf("%d são ímpares", cont_i);
+    
+    
+
+}
+}
