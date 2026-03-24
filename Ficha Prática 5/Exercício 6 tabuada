@@ -1,0 +1,26 @@
+/******************************************************************************
+6. Elabore um programa em C, que dado um número N (entre 1 e 10), 
+apresente a tabuada dos N.  
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        
+        int n, i;
+        
+        printf("Insira um número: ");
+        scanf("%d", &n);
+        
+        i=1;
+        
+        while(i<=10){
+            printf("%2d x %d = %3d\n", i, n, (i*n));
+            
+            i++;
+        }
+
+    return 0;
+}
+}
