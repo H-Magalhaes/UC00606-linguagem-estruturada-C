@@ -1,0 +1,55 @@
+/******************************************************************************
+3. Elabore um programa em C que simule o seguinte Menu. 
+A informação no ecrã deverá ser apresentada da seguinte forma:  As opções são:  
+1. Sim 
+2. Não 
+3. Talvez  
+Insira a opção:  Se for escolhida a opção 1, deverá imprimir no ecrã 
+a informação “Sim”. 
+Se for escolhida a opção 2, deverá imprimir no ecrã a informação 
+“Não” 
+Se for escolhida a opção 3, deverá imprimir no ecrã a informação 
+“Talvez” 
+Se não for escolhida nenhuma das opções anteriores deverá ser mostrado 
+novamente o menu. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+    int opcao;
+    
+    do{
+        printf("----Menu----\n");
+        printf("1 - Sim\n");
+        printf("2 - Não\n");
+        printf("3 - Talvez\n");
+        
+        printf("Escolha opção: ");
+        scanf("%d", &opcao);
+        
+        switch(opcao){
+            
+            case 1:
+            printf("Sim\n");
+            break;
+            
+            case 2:
+            printf("Não\n");
+            break;
+            
+            case 3:
+            printf("Talvez\n");
+            break;
+            
+            default:
+            printf("Opção errada\n");
+            break;
+        }
+    }while(opcao!=1 && opcao!=2 && opcao!=3);
+    printf("Programa terminado...");
+
+    return 0;
+}
+}
