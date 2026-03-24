@@ -1,0 +1,33 @@
+/******************************************************************************
+1. Elabore um programa em C, que peça ao utilizador as notas de 10 alunos 
+(entre 0 e 20). No final calcule e mostre a média das 10 notas inseridas. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        
+        float nota=0.0, soma=0.0, media=0.0;
+        int i=0;
+        do{
+            do{
+                printf("Insira %dª nota: ", i+1);
+                scanf("%f", &nota);
+                if(nota<0 || nota>20){
+                    printf("Nota Inválida\n");
+                }
+            }while(nota<0 || nota>20);
+            i++;
+            soma+=nota;
+        }while(i<10);
+        
+        media=soma/(i);
+        printf("Cont<dor é: %d\n", i);
+        printf("A soma é: %f\n", soma);
+        printf("A média é: %f\n", media);
+        
+        printf("Fim");
+        return 0;
+}
+}
