@@ -1,0 +1,22 @@
+/******************************************************************************
+7. Elabore um programa em C, que mostre os números entre 1 e 50, inclusive, 
+mas em ordem inversa. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        int i;
+        
+        i=50;
+        
+        while(i>=1){
+             printf("%d\n", i);
+        
+        i--;
+        }
+
+    return 0;
+}
+}
