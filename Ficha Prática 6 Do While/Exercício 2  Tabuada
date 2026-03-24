@@ -1,0 +1,36 @@
+/******************************************************************************
+2. Elabore um programa em C, que dado um número N (entre 1 e 10), tem de ser 
+um número entre 1 e 10.   Apresente a tabuada dos N.  
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");{
+        
+        int n=0, j;
+        char ent;
+        
+        ent='s';
+        while(ent=='s' || ent=='S'){
+        j=1;
+        do{
+            printf("Insira número entre 1 e 10: ");
+            scanf("%d", &n);
+            if(n>10 || n<0){
+                printf("Erro, o número deve ser entre 0 e 10");
+            }
+        }while(n>10 || n<0);
+        
+        do{
+            printf("%2d x %d = %3d\n", j, n, (j*n));
+            j++;
+        }while(j<=10);
+        printf("Deseja continuar? (s ou n)");
+        scanf(" %c", &ent);
+    }
+        printf("Programa terminado pelo utilizador");
+     return 0;
+}
+}
+
