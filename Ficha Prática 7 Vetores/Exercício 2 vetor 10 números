@@ -1,0 +1,27 @@
+/******************************************************************************
+2. Elabore um programa em C, que armazene 10 números num vetor inseridos 
+pelo utilizador. Mostre os valores inseridos no vetor, um por linha. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 10
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    
+    int soma=0,i;
+    int v_num[T_Max];
+    
+  for(i=0; i<T_Max; i++){
+      printf("Insira %dº número: ", i+1);
+      scanf("%d", &v_num[i]);
+  }
+   for(i=0; i<T_Max; i++){
+        printf("%dº vetor = %d\n", i+1, v_num[i]);
+   }
+    return 0;
+}
