@@ -1,0 +1,44 @@
+/******************************************************************************
+7. Elabore um programa em C, que armazene 10 números num vetor inseridos pelo 
+utilizador. Pedir ao utilizar um número e verificar se esse número existe 
+ou não no vetor. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 10
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    
+    int i, j, num, cont=0;
+    
+    int v_num[T_Max];
+    
+    
+    for(i=0; i<T_Max; i++){
+        printf("Insira %dº número: ", i+1);
+        scanf("%d", &v_num[i]);
+       
+    }
+    
+    printf("Insira número a verificar no vetor: ");
+    scanf("%d", &num);
+    
+    for(i=0; i<T_Max; i++){
+        if(num==v_num[i]){
+        j=i;
+        cont=1;
+        printf("O número %d está no vetor na posição %d\n", num, j);
+        }
+    }
+    
+    
+    if(cont==0){
+        printf("O número %d não está presente no vetor", num);
+    }
+    return 0;
+}
