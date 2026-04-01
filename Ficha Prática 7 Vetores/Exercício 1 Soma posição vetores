@@ -1,0 +1,35 @@
+/******************************************************************************
+1. Elabore um programa em C, que armazene 6 números inteiros. 
+a) O programa deve executar os seguintes passos: 
+i) Atribua os seguintes valores a esse vetor: 1, 0, 5, -2, -5, 7. 
+ii)Armazene numa variável inteira (simples) a soma dos valores das posições 
+A[0], A[1] e A[5] do vetor e mostre no ecrã esta soma. 
+iii) Modifique o vetor na posição 4, atribuindo a esta posição o valor 100.
+iv) Mostre no ecrã cada valor do vetor A, um em cada linha.
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 6
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    
+    int soma=0,i;
+    int v_notas[T_Max]={1,0,5,-2,-5, 7};
+    
+  soma = v_notas[0] + v_notas[1] + v_notas[5];
+  printf("A soma dos vetores 0, 1 e 5 é %d\n", soma);
+    
+    printf("Insira valor vetor 4: ");
+    scanf("%d", &v_notas[4]);
+    
+    for(i=0; i <T_Max; i ++){
+        printf("%d\n", v_notas[i]);
+    }
+   
+    return 0;
+}
