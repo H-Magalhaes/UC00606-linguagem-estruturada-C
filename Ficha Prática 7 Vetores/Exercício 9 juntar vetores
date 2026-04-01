@@ -1,0 +1,65 @@
+/******************************************************************************
+9. Escreva um programa que leia dois vetores (A e B) com 10 elementos cada. 
+a) Gerar um terceiro vetor (C) de 20 elementos, cujos valores deverão 
+ser compostos pelos elementos dos dois outros vetores. 
+Nas primeiras 10 posições os elementos do vetor A e nas seguintes 
+os elementos do vetor B.  
+No final o programa deverá mostrar os dois vetores originais (A e B) e o 
+terceiro vetor com os valores de A e B. 
+b) Gerar um quarto vetor (D) de 20 elementos, cujos valores deverão ser 
+compostos pelos elementos intercalados dos vetores A e B.  
+No final o programa deverá mostrar os dois vetores originais e o terceiro 
+vetor com os valores intercalados. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 10
+
+
+int main()
+{
+    int i, j=0;
+    
+    int v_num[T_Max], v_num2[T_Max], v_num3[2*T_Max], v_num4[2*T_Max];
+    
+    
+    for(i=0; i<T_Max; i++){
+        printf("Insira %dº número do primeiro vetor: ", i+1);
+        scanf("%d", &v_num[i]);
+        v_num3[i] = v_num[i];
+        
+        v_num4[j]=v_num[i];
+        j=j+2;
+    }
+   
+    j=1;
+    for(i=0; i<T_Max; i++){
+        printf("Insira %dº número do segundo vetor: ", i+1);
+        scanf("%d", &v_num2[i]);
+        v_num3[i+T_Max] = v_num2[i];
+        v_num4[j]=v_num2[i];
+        j+=2;
+    }
+   
+    printf("---Primeiro vetor---\n");
+    for(i=0; i<T_Max; i++){
+        printf("%d\n", v_num[i]);
+    }
+    printf("---Segundo vetor---\n");
+    for(i=0; i<T_Max; i++){
+        printf("%d\n", v_num2[i]);
+    }
+    
+    printf("---Terceiro vetor---\n");
+    for(i=0; i<2*T_Max; i++){
+        printf("%d\n", v_num3[i]);
+    }
+    
+    printf("---Quarto vetor---\n");
+    for(i=0; i<2*T_Max; i++){
+        printf("%d\n", v_num4[i]);
+    }
+
+    return 0;
+}
