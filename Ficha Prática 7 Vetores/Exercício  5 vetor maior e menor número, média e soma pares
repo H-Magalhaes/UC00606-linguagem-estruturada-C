@@ -1,0 +1,64 @@
+/******************************************************************************
+5. Elabore um programa em C, que armazene 10 números num vetor inseridos 
+pelo utilizador. Deverá mostrar no ecrã: 
+a) O maior elemento e respetiva posição. 
+b) O menor elemento e respetiva posição. 
+c) Calcular e mostrar a média dos elementos do vetor.  
+d) Calcular e mostrar a soma dos elementos pares. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 3
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    
+    int soma=0, soma_p=0, i, cont=0, maior=0, menor=0, pos_maior=0, pos_menor=0;
+    float media=0;
+    int v_num[T_Max];
+    
+    
+    for(i=0; i<T_Max; i++){
+        do{
+            printf("Insira %dª nota: ", i+1);
+            scanf("%d", &v_num[i]);
+        }while(v_num[i]<0 || v_num[i]>20);
+        
+    if(i==0){
+        maior=v_num[i];
+        menor=v_num[i];
+        pos_maior=i;
+        pos_menor=i;
+    }
+    else if(v_num[i]<menor){
+        menor=v_num[i];
+        pos_menor=i;
+    }
+    
+    else if(v_num[i]>maior){
+        maior=v_num[i];
+        pos_maior=i;
+    }
+       soma=soma+v_num[i];
+    }
+      printf("O número maior inserido é: %d, na posição %d\n", maior, pos_maior);
+      printf("O número menor inserido é: %d, na posição %d\n", menor, pos_menor);
+      
+      media=(float) soma/T_Max;
+      
+      printf("A média dos números inseridos é: %.2f\n", media);
+      
+      for(i=0; i<T_Max; i++){
+        if(v_num[i]%2==0){
+      printf("Os numeros pares são: %d, na posicao %d\n", v_num[i], i+1);
+      
+      soma_p=soma_p+v_num[i];
+        }
+    }
+    printf("A soma dos pares é: %d\n", soma_p);
+}
+    
