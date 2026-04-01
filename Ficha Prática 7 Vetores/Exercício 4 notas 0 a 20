@@ -1,0 +1,41 @@
+/******************************************************************************
+4. Elabore um programa em C, que armazene 10 notas de alunos de uma turma 
+(estas têm de ser ente 0 e 20) num vetor inseridos pelo utilizador. 
+No final mostre qual a maior nota inserida no vetor. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 10
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    
+    int soma=0, i, j, cont=0, maior=0, menor=0;
+    int v_num[T_Max];
+    
+    
+    for(i=0; i<T_Max; i++){
+        do{
+            printf("Insira %dª nota: ", i+1);
+            scanf("%d", &v_num[i]);
+        }while(v_num[i]<0 || v_num[i]>20);
+        
+    if(i==0){
+        maior=v_num[i];
+        menor=v_num[i];
+    }
+    else if(v_num[i]<menor){
+        menor=v_num[i];
+    }
+    
+    else if(v_num[i]>maior){
+        maior=v_num[i];
+    }
+    }
+      printf("O número maior inserido é: %d", maior);
+    }
+    
