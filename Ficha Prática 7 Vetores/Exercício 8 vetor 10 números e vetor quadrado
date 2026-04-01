@@ -1,0 +1,34 @@
+/******************************************************************************
+8. Elabore um programa em C, que armazene 10 números num vetor inseridos 
+pelo utilizador e calcular o quadrado de cada elemento desse vetor, armazenando 
+o resultado noutro vetor. No final imprimir no ecrã ambos os vetores. 
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+#define T_Max 10
+
+int main()
+{
+    int i;
+    
+    int v_num[T_Max], v_num2[T_Max];
+    
+    
+    for(i=0; i<T_Max; i++){
+        printf("Insira %dº número: ", i+1);
+        scanf("%d", &v_num[i]);
+        v_num2[i] = v_num[i] * v_num[i];
+    }
+   
+    printf("---Primeiro vetor---\n");
+    for(i=0; i<T_Max; i++){
+        printf("%d\n", v_num[i]);
+    }
+    printf("---Segundo vetor---\n");
+    for(i=0; i<T_Max; i++){
+        printf("%d\n", v_num2[i]);
+    }
+
+    return 0;
+}
