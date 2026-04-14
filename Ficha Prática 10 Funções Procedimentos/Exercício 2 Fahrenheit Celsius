@@ -1,0 +1,64 @@
+/******************************************************************************
+2. Elabore um programa em C que converta graus Fahrenheit em Celsius segundo a 
+seguinte fórmula:   C=(F-32)/1.8 O pedido dos graus Fahrenheit deverá ser 
+realizado na função main.  O cálculo deverá ser realizado dentro de uma função.  
+O resultado deverá ser mostrado através de um procedimento. 
+*******************************************************************************/
+#include <stdio.h>
+
+/*float calculo(float fahrenheit, float celsius){
+    
+    celsius=(fahrenheit - 32) / 1.8;
+    
+    return celsius;
+}
+
+void mostrar_celsius(float fahrenheit, float celsius){
+    
+    printf("%.2f° Fahrenheit = %.2f° Celsius", fahrenheit, celsius);
+}
+
+int main()
+{
+    float fahrenheit, celsius;
+    
+    printf("Insira graus em Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    
+    celsius=calculo(fahrenheit, celsius);
+    
+    mostrar_celsius(fahrenheit, celsius);
+
+    return 0;
+}*/
+
+
+float calculo(float fahrenheit, float celsius);
+
+void mostrar_celsius(float fahrenheit, float celsius);
+
+int main()
+{
+    float fahrenheit, celsius;
+    
+    printf("Insira graus em Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+    
+    celsius=calculo(fahrenheit, celsius);
+    
+    mostrar_celsius(fahrenheit, celsius);
+
+    return 0;
+}
+
+float calculo(float fahrenheit, float celsius){
+    
+    celsius=(fahrenheit - 32) / 1.8;
+    
+    return celsius;
+}
+
+void mostrar_celsius(float fahrenheit, float celsius){
+    
+    printf("%.2f° Fahrenheit = %.2f° Celsius", fahrenheit, celsius);
+}
