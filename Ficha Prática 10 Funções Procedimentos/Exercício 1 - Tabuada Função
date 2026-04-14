@@ -1,0 +1,36 @@
+/******************************************************************************
+1. Elabore um programa em C, que dado um número N (entre 1 e 10), 
+apresente a tabuada dos N.  Ex: Para N=5 deverá apresentar: 
+1x5=5 2x5=10 3x5=15 4x5=20 . . 10x5=50  
+O número N será pedido na função main. O resultado da tabuada 
+deverá ser realizado e mostrado dentro de um procedimento.
+*******************************************************************************/
+#include <stdio.h>
+
+int tabuada(int n);
+
+int main()
+{
+    int n=0;
+    
+    do{
+       printf("Insira número entre 1 e 10: ");
+       scanf("%d", &n);
+    }while(n<1 || n>10);
+    
+    tabuada(n);
+    
+    return 0;
+}
+
+int tabuada(int n){
+   
+    int multiplicar = 0;
+    int i;
+
+    for(i=1; i<=10; i++){
+        multiplicar = n * i;
+        printf("%2d x %d = %3d\n", i, n, multiplicar);
+    }
+    return n;
+}
