@@ -1,0 +1,108 @@
+/****************************************************************************** 
+Elabore um programa em C, que: 
+a) Peça ao utilizador quantos número deseja armazenar no vetor (até 100). 
+b) Peça ao utilizador para inserir os números e guarde-os no vetor. 
+c) Crie um menu com as 3 opções de ordenação e escolhendo uma delas mostre 
+o vetor ordenado. 
+*******************************************************************************/ 
+#include <stdio.h> 
+#include <locale.h> 
+
+int main() { int T_max=0, v_num[100], i, j, op, aux=0, min=0, menor=0; 
+
+do{ 
+   printf("Quantos numeros tera o vetor (entre 1 e 100)? "); 
+   scanf("%d", &T_max); 
+   if(T_max<0 || T_max>100){ 
+       printf("Opçao errada, insira um valor entre 0 e 100!\n"); 
+   } 
+}while(T_max<0 || T_max>100); 
+ 
+printf("Vetor com %d números\n", T_max); 
+ 
+for(i=0; i<T_max; i++){ 
+   printf("Insira %d° número: ", i+1); 
+   scanf("%d", &v_num[i]); 
+} 
+ 
+do{ 
+   printf("----Menu----\n"); 
+   printf("1 - Direta\n"); 
+   printf("2 - seleção\n"); 
+   printf("3 - BubbleSort\n"); 
+    
+   printf("Escolha opçao: "); 
+   scanf("%d", &op); 
+    
+   switch(op){ 
+       case 1: 
+       printf("Números inseridos no vetor: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       for(i=0; i<T_max; i++){ 
+           for(j=0; j<(T_max-1-i); j++){ 
+               if(v_num[j]>v_num[j+1]){ 
+                   aux = v_num[j]; 
+                   v_num[j] = v_num[j+1]; 
+                   v_num[j+1] = aux; 
+               } 
+           } 
+       } 
+       printf("\n\nVetor ordenação simples: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       break; 
+        
+       case 2: 
+       printf("Números inseridos no vetor: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       for(i=T_max; i>0; i--){ 
+           for(j=T_max-1-i; j>0; j--){ 
+               if(v_num[j]<v_num[j+1]){ 
+                   aux = v_num[j+1]; 
+                   v_num[j+1] = v_num[j]; 
+                   v_num[j] = aux; 
+               } 
+           } 
+       } 
+       printf("\n\nVetor ordenação seleção: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       break; 
+        
+       case 3: 
+       printf("Números inseridos no vetor: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       for(i=0; i<T_max-1; i++){ 
+           min=i; 
+           for(j=i+1; j<T_max; j++){ 
+               if(v_num[j]<v_num[min]){ 
+                   menor = v_num[min]; 
+                   min = j; 
+               } 
+           } 
+           aux = v_num[i]; 
+           v_num[i] = v_num[min]; 
+           v_num[min] = aux; 
+       } 
+       printf("\n\nVetor ordenação BubbleSort: \n"); 
+       for(i=0; i<T_max; i++){ 
+           printf("%d ", v_num[i]); 
+       } 
+       break; 
+        
+       default: 
+       printf("Opção inválida\n"); 
+        
+   } 
+}while(op!=1 && op!=2 && op!=3); 
+ 
+return 0;
+} 
