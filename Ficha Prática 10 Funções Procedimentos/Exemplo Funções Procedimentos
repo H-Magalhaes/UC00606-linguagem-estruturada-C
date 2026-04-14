@@ -1,0 +1,87 @@
+/******************************************************************************
+Funções no final do programa com protótipos
+*******************************************************************************/
+#include <stdio.h> 
+
+
+//prototipos 
+
+int somar(int a, int b); 
+
+void mostrar(); 
+
+void mostar_soma(int soma); 
+
+ 
+
+//função principal 
+
+int main() 
+
+{ 
+
+    int total=0, x= 5, y= 10; 
+
+     
+
+    mostrar(); 
+
+     
+
+    total = somar(2, 12); 
+
+ //   mostar_soma(total); 
+
+     
+
+  //  printf("O valor da soma dos valores fixos é %d\n", total); 
+
+   
+
+    total = somar(x, y); 
+
+ //   printf("O valor da soma é %d\n", total); 
+
+ //   mostar_soma(total); 
+
+     
+
+ //  printf("O valor da soma dos valores fixos é %d\n", somar(20, 30)); 
+
+    return 0; 
+
+} 
+
+ 
+
+ 
+
+ 
+
+void mostrar(){ 
+
+    printf("Hello World\n\n"); 
+
+} 
+
+ 
+
+ 
+
+int somar(int a, int b){ 
+
+    int soma=0; 
+
+    soma = a +b; 
+
+    mostar_soma(soma); 
+
+   return soma; 
+
+} 
+
+void mostar_soma(int soma){ 
+
+       printf("O valor da soma é %d\n", soma); 
+
+} 
