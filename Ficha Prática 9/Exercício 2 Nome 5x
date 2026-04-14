@@ -1,0 +1,30 @@
+/******************************************************************************
+2. Elabore um programa em C, que peça ao utilizador para introduzir um nome 
+e imprimir o nome 5 vezes (um por linha). 
+Juntar strigs (concactenar) - strcat
+#include <string.h> "libraria string"
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char nome[15];
+    char nome_cinco[50];
+    int i;
+    
+    printf("Insira nome: ");
+    fgets(nome, 15, stdin);
+    //scanf("%s", &nome);
+    
+    for(i=0; i<5; i++){
+        strcat(nome_cinco, nome);
+    }
+    printf("%s", nome_cinco);
+    
+    //for(i=0; i<5; i++){
+    //    printf("%s", nome);
+    //}
+
+    return 0;
+}
