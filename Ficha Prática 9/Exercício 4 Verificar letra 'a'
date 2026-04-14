@@ -1,0 +1,29 @@
+/******************************************************************************
+4. Elabore um programa em C, que peça ao utilizador para introduzir um nome 
+e imprimir quantas letras “a” tem o nome.
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nome[15];
+    int cont=0;
+    int i;
+
+    // Pedir o nome ao utilizador
+    printf("Introduza um nome: ");
+    //fgets(nome, 15, stdin);
+    fgets(nome, sizeof(nome), stdin);
+
+    // Contar quantas letras 'a' existem
+    //for(int i = 0; i 15; i++) {
+    for(i = 0; i < strlen(nome); i++) {
+        if(nome[i] == 'a' || nome[i] == 'A') {
+            cont++;
+        }
+    }
+
+    printf("O nome tem %d letra(s) 'a'\n", cont);
+
+    return 0;
+}
