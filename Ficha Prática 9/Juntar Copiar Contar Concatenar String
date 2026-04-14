@@ -1,0 +1,44 @@
+/*******************************************************************************
+#include <string.h> - necessário para funções string
+Copiar uma string noutra string - strcpy
+Juntar strigs (concactenar) - strcat
+igual - devolve 0 - senão devolve outro valor - comparar strings - strcmp
+strlen - contar tamanho da string (numero caracteres string)
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char string[10]="ana";
+    char str1[10];
+    int comp;
+    
+   /* printf("\n Intruduza uma string: ");
+    fgets(string,10,stdin);*/
+    
+  
+    strcpy(str1, string);
+    printf("Na string str1 está: %s\n", str1);
+    
+    strcat(str1, ", ");
+    strcat(str1, string);
+    printf("Agora na string str1 está: %s\n", str1);
+    
+   // comp = strcmp(str1, string);
+    // printf("\nStrings %d\n", comp);
+    
+    if(strcmp(str1, string)!=0){
+        printf("\ndiferentes\n");
+    }
+    else{
+        printf("\niguais\n");
+    }
+    
+    //comp=strlen(str1);
+    //printf("\nComprimento %d", comp);
+    
+    printf("\nComprimento: %d\n", strlen(str1));
+
+    return 0;
+}
