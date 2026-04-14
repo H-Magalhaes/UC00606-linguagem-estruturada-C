@@ -1,0 +1,28 @@
+/******************************************************************************
+1. Elabore um programa em C que leia o nome próprio e o apelido de uma pessoa 
+e imprima apelido seguido de uma vírgula e o do nome próprio. 
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char nome[20], apelido[20];
+    
+    printf("Insira nome: ");
+    //fgets(nome, 20, stdin);
+    scanf("%s", &nome);
+    
+    printf("Insira apelido: ");
+    //fgets(apelido, 20, stdin);
+    scanf("%s", &apelido);
+    
+    strcat(apelido, ", ");
+    strcat(apelido, nome);
+    printf("Apelido e nome: %s\n", apelido);
+    
+    //printf("%s, %s", apelido, nome);
+
+    return 0;
+}
