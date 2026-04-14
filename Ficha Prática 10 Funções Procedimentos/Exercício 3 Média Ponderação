@@ -1,0 +1,48 @@
+/******************************************************************************
+3. Elabore um programa em C que calcule com a ajuda de uma função a 
+classificação final de um aluno, sabendo as notas que obteve em três testes e a 
+ponderação atribuída a cada um deles. Teste Ponderação 1.º 20% 2.º 50% 3.º 30%  
+Se a classificação final for superior ou igual a dez, o aluno está aprovado; 
+caso contrário, está reprovado. 
+Mostre esta informação através de um procedimento. 
+*******************************************************************************/
+#include <stdio.h>
+
+#define Max 3
+
+float calculo(float nota[Max], float media){
+    media = (nota[0]*0.2) + (nota[1]*0.5) + (nota[2]*0.3);
+    printf("A média das notas é %f\n", media);
+    return media;
+}
+
+void mostrar(float media){
+    if(media>=10){
+        printf("Aprovado com a média de %.2f\n", media);
+    }
+    else{
+        printf("Reprovado com a média de %.2f\n", media);
+    }
+}
+
+int main()
+{
+    int i;
+    
+    float nota[Max], media;
+    
+    for(i=0; i<Max; i++){
+        do{
+            printf("Insira nota %d° teste: ", i+1);
+            scanf("%f", &nota[i]);
+            if(nota[i]<0 || nota[i]>20){
+                printf("Nota inválida, insira nota entre 0 e 20\n");
+            }
+        }while(nota[i]<0 || nota[i]>20);
+    }
+    media = calculo(nota, media);
+    
+    mostrar(media);
+
+    return 0;
+}
